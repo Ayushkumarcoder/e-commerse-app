@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { products } from "../assets/assets";
 
 //creating context api 
@@ -10,8 +10,12 @@ const ShopContextProvider = (prop) =>{
     const currency = '$';
     const delivery_fee = 10; //variables with values which will be passed
 
+    //for search 
+    const [search, setSearch] = useState('');
+    const [showSearch, setShowSearch] = useState(false);
+
     const value = {                  //this is the atom with the value which is being passed
-        products , currency, delivery_fee
+        products , currency, delivery_fee, search, setSearch, showSearch, setShowSearch
     }
 
     return (
